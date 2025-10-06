@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <title>index.html</title>
+    <style>
+      #page-header {
+        background-size: cover;
+        background-position: center;
+        transition: background-image 1s ease-in-out;
+        min-height: 350px;
+        position: relative;
+      }
+      #page-header::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+      }
+      #page-header .pg-text {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        text-align: center;
+        padding: 80px 20px 60px 20px;
+      }
+
+      /* Responsive Navbar Styles */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 10px 20px;
+        position: relative;
+      }
+      #nav-ul ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+      }
+      .hamburger span {
+        height: 3px;
+        width: 100%;
+        background: #333;
+        margin: 4px 0;
+        border-radius: 2px;
+        transition: 0.4s;
+      }
+      /* Tablet and Mobile: Only show logo, search bar, and hamburger */
+      @media (max-width: 900px) {
+        nav {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          padding: 8px 10px;
+        }
+        #header {
+          flex: 1;
+        }
+        .search-form {
+          flex: 2;
+          margin: 0 8px;
+        }
+        .search-input {
+          width: 90px;
+          height: 28px;
+          font-size: 0.95em;
+          padding: 4px 8px;
+        }
+        .search-btn {
+          height: 28px;
+          font-size: 0.95em;
+          padding: 4px 10px;
+        }
+        .hamburger {
+          display: flex;
+          margin-left: 8px;
+
+        }
+        #nav-ul {
+          flex: 1;
+        }
+        #nav-ul ul {
+          flex-direction: column;
+          gap: 0;
+          width: 100%;
+          display: none;
+          background: #fff;
+          position: absolute;
+          top: 48px;
+          left: 0;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          z-index: 10;
+        }
+        #nav-ul ul.active {
+          display: flex;
+        }
+        #nav-ul ul li {
+          padding: 8px 0;
+          font-size: 1em;
+        }
+      }
+      /* Mobile screens */
+      @media (max-width: 600px) {
+        nav {
+          padding: 6px 4px;
+        }
+        .search-form {
+          margin: 0 4px;
+        }
+        .search-input {
+          width: 70px;
+          height: 22px;
+          font-size: 0.85em;
+          padding: 2px 6px;
+        }
+        .search-btn {
+          height: 22px;
+          font-size: 0.85em;
+          padding: 2px 8px;
+        }
+        #nav-ul ul {
+          top: 40px;
+        }
+        #nav-ul ul li {
+          padding: 6px 0;
+          font-size: 0.95em;
+        }
+      }
+      /* Desktop screens */
+      @media (min-width: 901px) {
+        .search-input {
+          width: 180px;
+          height: 36px;
+          font-size: 1em;
+          padding: 6px 12px;
+        }
+        .search-btn {
+          height: 36px;
+          font-size: 1em;
+          padding: 6px 16px;
+        }
+        #nav-ul ul li {
+          padding: 0;
+          font-size: 1.05em;
+        }
+      }
+      /* Responsive Product Grid */
+      .product-grid {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      @media (max-width: 900px) {
+        .product-grid {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .product-card {
+          width: 100%;
+        }
+      }
+      /* Responsive Features Grid */
+      .features-grid {
+        display: flex;
+        gap: 20px;
+      }
+      @media (max-width: 900px) {
+        .features-grid {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+      /* Responsive Footer */
+      .footer-content {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+      @media (max-width: 900px) {
+        .footer-content {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+      /* Responsive Newsletter */
+      /* .newsletter form {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      @media (max-width: 900px) {
+        .newsletter form {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .newsletter input,
+        .newsletter button {
+          width: 100%;
+        }
+      } */
+      /* Responsive page header text */
+      @media (max-width: 900px) {
+        #page-header .pg-text {
+          padding: 40px 10px 30px 10px;
+          font-size: 1em;
+        }
+      }
+    </style>
+  <header>
+      <nav>
+        <div id="header">
+          <a href="" class="logo">AgroFresh</a>
+        </div>
+        <div>
+          <form class="search-form" role="search">
+            <input
+              class="search-input"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="search-btn" type="submit">Search</button>
+          </form>
+        </div>
+        <div id="nav-ul">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./product.html">Product</a></li>
+            <li id="lg-bag">
+              <a href="./cart.html">
+                <i class="fa-solid fa-cart-plus"></i>
+                <span id="cart-count" class="cart-count-badge">0</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <section id="page-header">
+      <!-- <img src="./images/sunset farm.jpg">
+            <img src="./images/sensetfarm2.jpg">
+            <img src="./images/grean farm blue sky.jpg">
+            <img src="./images/rice water farm.jpg"> -->
+
+      <div class="pg-text">
+        <h1>Fresh from Farm to Table</h1>
+        <p>
+          Buy organic fruits,vegetables,and grains directly from local farms.
+        </p>
+        <button><a href="">Connect Now</a></button>
+      </div>
+    </section>
+
+    <section id="products" class="products">
+      <div class="product-text">
+        <h2>Featured Products</h2>
+        <p>Check through our products to order</p>
+      </div>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="../images/tomatoes.webp" alt="Fresh Tomatoes" />
+          <h3>Fresh Tomatoes</h3>
+          <p>$2.50 / kg</p>
+          <button>Order Now</button>
+        </div>
+        <div class="product-card">
+          <img src="../images/carrot.png" alt="Organic Carrots" />
+          <h3>Organic Carrots</h3>
+          <p>$3.00 / kg</p>
+          <button>Order Now</button>
+        </div>
+        <div class="product-card">
+          <img src="../images/cassava.jpg" alt="Cassava" />
+          <h3>Cassava</h3>
+          <p>$4.00 / pack</p>
+          <button>Order Now</button>
+        </div>
+      </div>
+    </section>
+    <!-- Why Choose Us -->
+    <section class="features">
+      <h2>Why Choose AgroFresh?</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <h3>🌱 100% Organic</h3>
+          <p>
+            All our products are sourced directly<br />
+            from trusted farmers without chemicals.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>🚚 Fast Delivery</h3>
+          <p>
+            Get your farm products delivered <br />fresh and on time, right at
+            your doorstep.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>💰 Affordable Prices</h3>
+          <p>
+            We eliminate middlemen to give you<br />
+            the best prices straight from the farm.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <h2>Stay Updated</h2>
+      <p>Subscribe to get updates on fresh stock, discounts, and more.</p>
+      <form>
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div>
+          <h3>AgroFresh</h3>
+          <p>Bringing the farm to <br />your doorstep with ease.</p>
+        </div>
+        <div class="quick-link">
+          <h4>Quick Links</h4>
+          <a href="#">Home</a><br />
+          <a href="#about">About</a><br />
+          <a href="#products">Products</a><br />
+          <a href="#cart">Cart</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>Email: support@agrofresh.com</p>
+          <p>Phone: +234 800 123 4567</p>
+        </div>
+      </div>
+      <p class="copy">© 2025 AgroFresh. All rights reserved.</p>
+    </footer>
+    <script>
+      const heroImages = [
+        "./images/sunset farm.jpg",
+        "./images/sensetfarm2.jpg",
+        "./images/grean farm blue sky.jpg",
+        "./images/rice water farm.jpg",
+      ];
+
+      let currentHero = 0;
+      const heroSection = document.getElementById("page-header");
+
+      function changeHeroBg() {
+        heroSection.style.backgroundImage = `url('${heroImages[currentHero]}')`;
+        currentHero = (currentHero + 1) % heroImages.length;
+      }
+
+      changeHeroBg();
+      setInterval(changeHeroBg, 4000);
+
+      // Hamburger menu logic
+      const hamburger = document.getElementById("hamburger-menu");
+      const navUl = document.querySelector("#nav-ul ul");
+      hamburger.addEventListener("click", () => {
+        navUl.classList.toggle("active");
+      });
+      hamburger.addEventListener("keypress", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          navUl.classList.toggle("active");
+          hamburger.style.color = navUl.classList.contains("active")
+            ? "white"
+            : "black";
+        }
+      });
+
+      document
+        .querySelector(".search-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const query = document
+            .querySelector(".search-input")
+            .value.trim()
+            .toLowerCase();
+          if (query) {
+            localStorage.setItem("searchQuery", query);
+            window.location.href = "product.html";
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,264 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f6fff7;
+  margin: 0;
+  padding: 0;
+}
+
+d
+  font-size: 1.2em;
+  font-weight: 400;
+}
+.logo {
+  width: 200px;
+  color: white;
+  font-size: 2em;
+  font-weight: 900;
+}
+.search-input {
+  padding: 10px;
+  width: 300px;
+  color: white;
+  border: 2px solid rgb(115, 221, 115);
+  background-color: transparent;
+}
+.search-btn {
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+h1 {
+  text-align: center;
+  margin: 40px 0 20px 0;
+  color: #014716;
+}
+.product-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+section > h2 {
+  color: #026c2a;
+  margin-bottom: 18px;
+  margin-left: 10px;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+.product-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(1, 71, 22, 0.08);
+  padding: 18px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.product-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(1, 71, 22, 0.15);
+}
+.product-card img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain; /* Prevents stretching/cropping */
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: #f3f3f3;
+  box-shadow: 0 1px 4px rgba(1, 71, 22, 0.08);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.product-card h3 {
+  margin: 10px 0 5px 0;
+  color: #014716;
+  font-size: 1.1em;
+}
+.price {
+  color: #d32f2f;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.cart-btn {
+  display: inline-block;
+  background: #014716;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.cart-btn:hover {
+  background: #026c2a;
+}
+.cart-count-badge {
+  background: #d32f2f;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 0.95em;
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  font-weight: bold;
+}
+#lg-bag {
+  position: relative;
+}
+@media (max-width: 700px) {
+  .product-grid {
+    padding: 0 10px;
+  }
+  .products {
+    grid-template-columns: 1fr;
+  }
+  header,
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .logo,
+  .nav-links {
+    margin: 10px 0;
+  }
+}
+
+/* Newsletter */
+.newsletter {
+  padding: 50px 20px;
+  text-align: center;
+  background: rgb(1, 71, 22);
+}
+
+.newsletter form {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  margin: auto;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+}
+
+.newsletter button {
+  padding: 10px 20px;
+  border: none;
+  background: green;
+  color: white;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+.newsletter h2 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+.newsletter p {
+  font-size: 1.2em;
+  color: rgb(247, 160, 31);
+  font-style: oblique;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background: darkgreen;
+  color: white;
+  padding: 30px 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.footer-content h3 {
+  margin-bottom: 20px;
+}
+
+footer h4 {
+  margin-bottom: 20px;
+}
+footer p {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #ddd;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+.quick-link a {
+  line-height: 2em;
+}
+
+footer .copy {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: grey;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Category section styling for product rows */
+.category-section {
+  margin-bottom: 40px;
+}
+
+.category-section h2 {
+  color: #026c2a;
+  margin-bottom: 18px;
+  margin-left: 10px;
+}
+
+/* Grid for each product row (category) */
+.products-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 24px;
+  margin-bottom: 10px;
+}
+
+/* Responsive: 2 cards per row on tablets, 1 on mobile */
+@media (max-width: 900px) {
+  .products-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .products-row {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../other css/about.css">
+</head>
+<body>
+    <header>
+           <nav>
+                <div id="header">
+                  <a href="" class="logo">AgroFresh</a>
+               </div>
+               <div>
+                 <form class="search-form" role="search">
+                     <input class="search-input" type="search" placeholder="what do you want to order?" aria-label="Search"/>
+                     <button class="search-btn"  type="submit">Search</button>
+                 </form>
+               </div>
+             <div id="nav-ul">
+                <ul>
+                   <li><a href="index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./product.html">Product</a></li>
+                    <li id="lg-bag"><a href="./cart.html"><i class="fa-solid fa-cart-plus"></i></i></a></li>
+                </ul>
+             </div>
+           </nav>
+        </header>
+        <section id="page-header">
+            <div class="pg-text">
+                <h1>About Us</h1>
+            </div>
+         </section>
+         <section class="about-sect">
+            <div class="about-container">
+                <div class="about-text" id="about-typing">
+                   <h3>Why is this service important?</h3>
+                   <p></p>
+                   <p></p>
+                   <p></p>
+                   <p></p>
+                   <p></p>
+                </div>
+            </div>
+         </section>
+
+         <section class="team">
+      <div class="container">
+        <h2 class="section-title">Meet Our Team</h2>
+        <div class="team">
+          <div class="member">
+            <img src="../images/20250212_112221.jpg" alt="Team Member" />
+            <h4>Joy Afemije</h4>
+            <p>Founder & CEO</p>
+          </div>
+          <div class="member">
+            <img src="../images/courage.jpg.jpg" alt="Team Member" />
+            <h4>Courage Afemije</h4>
+            <p>Lead Developer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+         <!-- FAQ Accordion Section -->
+<section class="faq-section">
+  <div class="faq-container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-accordion">
+      <div class="faq-item">
+        <button class="faq-question">How do I place an order?</button>
+        <div class="faq-answer">
+          Browse our products, add items to your cart, and proceed to checkout to place your order.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Are your products organic?</button>
+        <div class="faq-answer">
+          Yes, all our products are 100% organic and sourced directly from trusted farmers.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How fast is delivery?</button>
+        <div class="faq-answer">
+          We deliver within 24-48 hours of order confirmation, depending on your location.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What payment methods do you accept?</button>
+        <div class="faq-answer">
+          We accept credit/debit cards, bank transfers, and mobile payments.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Newsletter -->
+  <section class="newsletter">
+    <h2>Stay Updated</h2>
+    <p>Subscribe to get updates on fresh stock, discounts, and more.</p>
+    <form>
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+    <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h3>AgroFresh</h3>
+        <p>Bringing the farm to <br>your doorstep with ease.</p>
+      </div>
+      <div class="quick-link">
+        <h4>Quick Links</h4>
+        <a href="#">Home</a><br>
+        <a href="#about">About</a><br>
+        <a href="#products">Products</a><br>
+        <a href="#cart">Cart</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: support@agrofresh.com</p>
+        <p>Phone: +234 800 123 4567</p>
+      </div>
+    </div>
+    <p class="copy">© 2025 AgroFresh. All rights reserved.</p>
+  </footer>
+
+
+  <script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const item = this.parentElement;
+      item.classList.toggle('active');
+      document.querySelectorAll('.faq-item').forEach(other => {
+        if (other !== item) other.classList.remove('active');
+      });
+    });
+  });
+
+  document.querySelector('.search-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const query = document.querySelector('.search-input').value.trim().toLowerCase();
+  if (query) {
+    localStorage.setItem('searchQuery', query);
+    window.location.href = 'product.html';
+  }
+});
+
+// Typing animation for about-text
+const aboutParagraphs = [
+  "Food waste is a huge global problem. In Nigeria and Africa, about 60% of all food cultivated annually gets wasted before they can get to the people who need them. We are talking about enough food to feed over 300 million hungry people in the Continent, costing farmers billions of dollars in annual revenue, and perpetuating the cycle of poverty.",
+  "Despite this enormous waste, Hotels, Eateries, Food Processors, Manufacturers, Resellers, and other businesses and bulk buyers of farm produce still struggle to get the produce they need to power their businesses where and when they need them, highlighting how broken the supply chain in Nigeria and Africa is.",
+  "It is important to point out that primary food production in Nigeria is worth an approximate $15 billion (US Dept of Commerce), meaning that 60% of this value going to waste is simply unacceptable.",
+  "To solve this problem, we built a web platform at www.agrofresh.com that enables farmers post pictures and prices of their produce and sell directly to buyers anywhere in the country. This also means that buyers can visit the platform and buy directly from farmers in any part of the country and have the produce delivered to them in 1-2 days",
+  "Elimination of food waste means that food prices are impacted overtime for millions of people"
+];
+
+const aboutTextDiv = document.getElementById('about-typing');
+const aboutPs = aboutTextDiv.querySelectorAll('p');
+
+function typeParagraph(text, element, speed = 20) {
+  return new Promise(resolve => {
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      } else {
+        resolve();
+      }
+    }
+    type();
+  });
+}
+
+async function typeAllParagraphs() {
+  for (let i = 0; i < aboutParagraphs.length; i++) {
+    await typeParagraph(aboutParagraphs[i], aboutPs[i]);
+    await new Promise(r => setTimeout(r, 400)); // Pause between paragraphs
+  }
+}
+
+typeAllParagraphs();
+  </script>
+</body>
+</html>

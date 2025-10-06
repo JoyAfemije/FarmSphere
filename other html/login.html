@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../other css/login.css" />
+  <style>
+
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      list-style-type: none;
+      text-decoration: none;
+    }
+     body {
+  font-family: Arial, sans-serif;
+  background: #f6fff7;
+  margin: 0;
+  padding: 0;
+}
+    nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:20px 80px;
+    background-color: rgb(1, 71, 22);
+
+  }
+#nav-ul ul{
+   display: flex;
+}
+#nav-ul ul li{
+    padding: 20px;
+}
+#nav-ul ul li a{
+    color:white;
+    font-size: 1.2em;
+    font-weight:400 ;
+}
+.logo{
+    width: 200px;
+    color: white;
+    font-size: 2em;
+    font-weight: 900;
+}
+.search-input{
+    padding: 10px;
+    width: 300px;
+    border: 2px solid rgb(115, 221, 115);
+    background-color: transparent;
+}
+.search-btn{
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+    .container {
+      padding: 40px 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      width: 300px;
+      margin: 20px auto;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    h2 {
+      color: white;
+      margin-top: 40px;
+      text-align: center;
+    }
+    input[type="text"], input[type="password"] {
+      padding: 8px;
+      width: 100%;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background: #014716;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 1em;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #026c2a;
+    }
+    @media (max-width: 400px) {
+      form {
+        width: 90vw;
+        padding: 10px;
+      }
+      h2 {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+  <body>
+    <header>
+           <nav>
+                <div id="header">
+                  <a href="" class="logo">AgroFresh</a>
+               </div>
+               <div>
+                 <form class="search-form" role="search">
+                     <input class="search-input" type="search" placeholder="Search" aria-label="Search"/>
+                     <button class="search-btn"  type="submit">Search</button>
+                 </form>
+                </div>
+
+             <div id="nav-ul">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./product.html">Product</a></li>
+                    <li id="lg-bag"><a href="./cart.html"><i class="fa-solid fa-cart-plus"></i></i></a></li>
+
+
+
+                </ul>
+             </div>
+           </nav>
+        </header>
+  <div class="container">
+    <h2>Login</h2>
+    <form onsubmit="login(event)">
+      <input type="text" id="loginUsername" placeholder="Username" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

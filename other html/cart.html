@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Your Cart</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../other css/cart.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="header">
+          <a href="" class="logo">AgroFresh</a>
+        </div>
+        <div>
+          <form class="search-form" role="search">
+            <input
+              class="search-input"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="search-btn" type="submit">Search</button>
+          </form>
+        </div>
+
+        <div id="nav-ul">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./product.html">Product</a></li>
+            <li id="lg-bag">
+              <a href="./cart.html">
+                <i class="fa-solid fa-cart-plus"></i>
+                <!-- <span id="cart-count" class="cart-count-badge">0</span> -->
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>Your Cart</h1>
+      <div id="cart-items"></div>
+      <div class="cart-summary">
+        <h2>Total: ₦<span id="cart-total">0</span></h2>
+        <h3>Payment Options</h3>
+        <form id="payment-form">
+          <label>
+            <input type="radio" name="payment" value="bank-transfer" checked />
+            Bank Transfer
+          </label>
+          <label>
+            <input type="radio" name="payment" value="card" />
+            Bank Card
+          </label>
+          <button type="submit">Proceed to Payment</button>
+        </form>
+      </div>
+    </main>
+    <script src="cart.js"></script>
+  </body>
+
+  <script>
+    // Example cart.js for localStorage-based cart
+    document.addEventListener("DOMContentLoaded", function () {
+      const cartItemsDiv = document.getElementById("cart-items");
+      const cartTotalSpan = document.getElementById("cart-total");
+
+      // Get cart from localStorage or empty array
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      function renderCart() {
+        cartItemsDiv.innerHTML = "";
+        let total = 0;
+        if (cart.length === 0) {
+          cartItemsDiv.innerHTML = "<p>Your cart is empty.</p>";
+          cartTotalSpan.textContent = "0";
+          return;
+        }
+        cart.forEach((item, idx) => {
+          total += item.price * item.qty;
+          cartItemsDiv.innerHTML += `
+        <div class="cart-item">
+          <img src="${item.img}" alt="${item.name}">
+          <div class="cart-item-details">
+            <div class="cart-item-title">${item.name}</div>
+            <div class="cart-item-price">₦${item.price} x ${item.qty}</div>
+          </div>
+          <button class="remove-btn" data-idx="${idx}">Remove</button>
+        </div>
+      `;
+        });
+        cartTotalSpan.textContent = total;
+      }
+
+      renderCart();
+
+      // Remove item
+      cartItemsDiv.addEventListener("click", function (e) {
+        if (e.target.classList.contains("remove-btn")) {
+          const idx = e.target.getAttribute("data-idx");
+          cart.splice(idx, 1);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          renderCart();
+        }
+      });
+
+      // Payment form submit (demo only)
+      document
+        .getElementById("payment-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert(
+            "Payment option selected: " +
+              document.querySelector('input[name="payment"]:checked').value
+          );
+        });
+    });
+
+    document
+      .querySelector(".search-form")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+        const query = document
+          .querySelector(".search-input")
+          .value.trim()
+          .toLowerCase();
+        if (query) {
+          localStorage.setItem("searchQuery", query);
+          window.location.href = "product.html";
+        }
+      });
+  </script>
+</html>
