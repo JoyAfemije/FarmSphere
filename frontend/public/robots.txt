@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /account/
+
+Sitemap: https://agrotech-store.vercel.app/sitemap.xml
