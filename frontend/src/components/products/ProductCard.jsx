@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FiShoppingCart, FiHeart, FiEye } from "react-icons/fi";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa6";
 import useCartStore from "../../store/useCartStore";
-import { formatNaira, buildWhatsAppProductURL } from "../../utils/formatCurrency";
+import { formatNaira, buildEmailProductURL } from "../../utils/formatCurrency";
 
 function StarRating({ rating, count }) {
   return (
@@ -145,13 +145,11 @@ export default function ProductCard({ product }) {
             <FiShoppingCart size={14} /> Add to Cart
           </button>
           <a
-            href={buildWhatsAppProductURL(product)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-10 h-10 flex items-center justify-center rounded-xl bg-green-500 hover:bg-green-600 text-white transition-colors flex-shrink-0"
-            aria-label="Order on WhatsApp"
+            href={buildEmailProductURL(product)}
+            className="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-800 hover:bg-gray-700 text-white transition-colors flex-shrink-0"
+            aria-label="Enquire by Email"
           >
-            <FaWhatsapp size={17} />
+            <FaEnvelope size={15} />
           </a>
         </div>
       </div>

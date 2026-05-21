@@ -5,7 +5,7 @@ import {
   FiSearch, FiShoppingCart, FiUser, FiMenu, FiX, FiChevronDown,
   FiLogOut, FiPackage, FiSettings
 } from "react-icons/fi";
-import { GiWheat } from "react-icons/gi";
+import { FaWheatAwn } from "react-icons/fa6";
 import useCartStore from "../../store/useCartStore";
 import useAuthStore from "../../store/useAuthStore";
 import useThemeStore from "../../store/useThemeStore";
@@ -82,8 +82,8 @@ export default function Navbar() {
         <nav className="container flex items-center justify-between h-16">
           {/* ── Logo ── */}
           <Link to="/" className="flex items-center gap-2 font-heading font-bold text-xl text-primary-600">
-            <GiWheat className="text-2xl" />
-            <span>Agro<span className="text-gray-800 dark:text-white">tech</span></span>
+            <FaWheatAwn className="text-2xl" />
+            <span>Farm<span className="text-gray-800 dark:text-white">Sphere</span></span>
           </Link>
 
           {/* ── Desktop Nav Links ── */}

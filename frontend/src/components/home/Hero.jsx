@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FiArrowRight, FiShield, FiTruck, FiStar } from "react-icons/fi";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa6";
 
 const stats = [
   { icon: "🌾", label: "Products", value: "2,500+" },
   { icon: "👨‍🌾", label: "Farmers Served", value: "15,000+" },
-  { icon: "🏙️", label: "States Covered", value: "36" },
+  { icon: "🌍", label: "Countries", value: "20+" },
   { icon: "⭐", label: "Rating", value: "4.9/5" },
 ];
 
@@ -70,7 +70,7 @@ export default function Hero() {
             {/* Label */}
             <motion.div variants={item} className="inline-flex items-center gap-2 bg-primary-600/20 border border-primary-500/30 text-primary-400 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
               <span className="w-1.5 h-1.5 bg-primary-400 rounded-full animate-pulse" />
-              Nigeria's #1 Agrotech Store
+              Africa's #1 Agro Tech Store
             </motion.div>
 
             {/* Headline */}
@@ -84,7 +84,7 @@ export default function Hero() {
 
             {/* Description */}
             <motion.p variants={item} className="text-gray-300 text-lg leading-relaxed mb-8 max-w-xl">
-              From premium fertilizers and pesticides to modern irrigation systems and power tools — everything Nigeria's farmers need to maximize yield and profit, delivered nationwide.
+              From premium fertilizers and pesticides to modern irrigation systems and power tools — everything Africa's farmers need to maximize yield and profit, delivered continent-wide.
             </motion.p>
 
             {/* Trust Badges */}
@@ -103,12 +103,10 @@ export default function Hero() {
                 Shop Now <FiArrowRight />
               </Link>
               <a
-                href="https://wa.me/2348012345678?text=Hello Agrotech! I need help with an order."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl font-semibold text-base bg-green-500 hover:bg-green-400 text-white transition-colors"
+                href="mailto:orders@farmsphere.africa?subject=New Order Inquiry"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl font-semibold text-base bg-white/10 hover:bg-white/20 border border-white/20 text-white transition-colors"
               >
-                <FaWhatsapp size={20} /> Order on WhatsApp
+                <FaEnvelope size={18} /> Email Our Team
               </a>
             </motion.div>
 
@@ -157,7 +155,7 @@ export default function Hero() {
                 <div>
                   <p className="text-xs text-gray-500">Best Seller</p>
                   <p className="text-sm font-bold text-gray-800 dark:text-white">NPK Fertilizer</p>
-                  <p className="text-primary-600 font-bold text-sm">₦12,500</p>
+                  <p className="text-primary-600 font-bold text-sm">$12.50</p>
                 </div>
               </motion.div>
 

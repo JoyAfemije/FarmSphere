@@ -66,11 +66,11 @@ export default function AdminDashboard() {
 
   return (
     <>
-      <Helmet><title>Admin Dashboard — Agrotech</title></Helmet>
+      <Helmet><title>Admin Dashboard — FarmSphere</title></Helmet>
       <div>
         <div className="mb-8">
           <h1 className="text-2xl font-heading font-bold text-gray-900 dark:text-white">Dashboard Overview</h1>
-          <p className="text-gray-500 text-sm mt-1">Welcome back, Admin! Here's what's happening at Agrotech.</p>
+          <p className="text-gray-500 text-sm mt-1">Welcome back, Admin! Here's what's happening at FarmSphere.</p>
         </div>
 
         {/* Stats Cards */}

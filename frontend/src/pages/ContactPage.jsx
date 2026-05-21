@@ -3,16 +3,16 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import { FiPhone, FiMail, FiMapPin, FiClock, FiSend } from "react-icons/fi";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa6";
 import toast from "react-hot-toast";
 import api from "../api/axios";
 
 const contactInfo = [
-  { icon: <FiPhone size={20} />, label: "Phone", value: "+234 801 234 5678", link: "tel:+2348012345678", color: "bg-blue-100 dark:bg-blue-900/30 text-blue-600" },
-  { icon: <FaWhatsapp size={20} />, label: "WhatsApp", value: "+234 801 234 5678", link: "https://wa.me/2348012345678", color: "bg-green-100 dark:bg-green-900/30 text-green-600" },
-  { icon: <FiMail size={20} />, label: "Email", value: "info@agrotech.ng", link: "mailto:info@agrotech.ng", color: "bg-orange-100 dark:bg-orange-900/30 text-orange-600" },
-  { icon: <FiMapPin size={20} />, label: "Address", value: "15 Agro Plaza, Abuja-Kano Road, Kaduna, Nigeria", link: null, color: "bg-rose-100 dark:bg-rose-900/30 text-rose-600" },
-  { icon: <FiClock size={20} />, label: "Hours", value: "Mon–Sat: 8:00 AM – 6:00 PM", link: null, color: "bg-purple-100 dark:bg-purple-900/30 text-purple-600" },
+  { icon: <FiPhone size={20} />, label: "Phone", value: "+234 801 234 5678", link: "tel:+2348012345678", color: "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white" },
+  { icon: <FiMail size={20} />, label: "Sales Email", value: "orders@farmsphere.africa", link: "mailto:orders@farmsphere.africa", color: "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white" },
+  { icon: <FiMail size={20} />, label: "Support Email", value: "support@farmsphere.africa", link: "mailto:support@farmsphere.africa", color: "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white" },
+  { icon: <FiMapPin size={20} />, label: "Region", value: "Pan-African Operations · 20+ Countries Covered", link: null, color: "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white" },
+  { icon: <FiClock size={20} />, label: "Hours", value: "Mon–Sat: 8:00 AM – 6:00 PM (WAT)", link: null, color: "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white" },
 ];
 
 export default function ContactPage() {
@@ -33,18 +33,18 @@ export default function ContactPage() {
   return (
     <>
       <Helmet>
-        <title>Contact Us — Agrotech Nigeria | WhatsApp & Email Support</title>
-        <meta name="description" content="Contact Agrotech Nigeria for product inquiries, orders, and support. Reach us via WhatsApp, phone, or email. Located in Kaduna, Nigeria." />
+        <title>Contact Us — FarmSphere Africa | Email & Live Support</title>
+        <meta name="description" content="Contact FarmSphere Africa for product inquiries, orders, and support. Reach us by email or phone. Serving farmers across 20+ African countries." />
       </Helmet>
 
       {/* Header */}
       <div className="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-16">
         <div className="container text-center">
           <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="text-3xl md:text-4xl font-heading font-bold mb-3">
-            Contact Agrotech
+            Contact FarmSphere
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="text-primary-100 max-w-lg mx-auto">
-            Have questions? We're here to help Nigerian farmers succeed. Reach us via WhatsApp for the fastest response.
+            Have questions? We're here to help farmers across Africa succeed. Email us for the fastest response.
           </motion.p>
         </div>
       </div>
@@ -78,14 +78,12 @@ export default function ContactPage() {
               </motion.div>
             ))}
 
-            {/* WhatsApp CTA */}
+            {/* Email CTA */}
             <a
-              href="https://wa.me/2348012345678?text=Hello Agrotech! I need assistance."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 w-full py-4 rounded-2xl bg-green-500 hover:bg-green-600 text-white font-semibold justify-center transition-colors mt-4"
+              href="mailto:support@farmsphere.africa?subject=Support Request"
+              className="flex items-center gap-3 w-full py-4 rounded-2xl bg-gray-900 hover:bg-gray-800 text-white font-semibold justify-center transition-colors mt-4"
             >
-              <FaWhatsapp size={22} /> Chat on WhatsApp Now
+              <FaEnvelope size={20} /> Email Us Now
             </a>
           </div>
 
@@ -152,7 +150,7 @@ export default function ContactPage() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Agrotech Nigeria Location"
+              title="FarmSphere Africa Location"
             />
           </div>
         </div>

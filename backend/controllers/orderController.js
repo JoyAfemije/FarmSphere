@@ -46,7 +46,7 @@ const createOrder = asyncHandler(async (req, res) => {
     });
   }
 
-  // Simple shipping: free above ₦20,000
+  // Simple shipping: free above $20
   const shippingFee = subtotal >= 20000 ? 0 : 1500;
   const total = subtotal + shippingFee;
 

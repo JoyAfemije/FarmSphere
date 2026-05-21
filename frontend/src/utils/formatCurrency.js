@@ -1,53 +1,53 @@
 /**
- * Format number as Nigerian Naira currency
+ * Format number as USD currency (pan-African standard)
  * @param {number} amount
- * @returns {string} e.g. "₦12,500"
+ * @returns {string} e.g. "$12,500"
  */
-export const formatNaira = (amount) => {
-  if (typeof amount !== "number" || isNaN(amount)) return "₦0";
-  return `₦${amount.toLocaleString("en-NG")}`;
+export const formatUSD = (amount) => {
+  if (typeof amount !== "number" || isNaN(amount)) return "$0";
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+  }).format(amount);
 };
+
+// Alias kept so existing imports still work
+export const formatNaira = formatUSD;
 
 /**
  * Format a number with thousand separators
  */
-export const formatNumber = (num) => {
-  return Number(num).toLocaleString("en-NG");
-};
+export const formatNumber = (num) => Number(num).toLocaleString("en-US");
 
 /**
- * Build WhatsApp message URL for order
+ * Build email order link
  * @param {Array} items - cart items
- * @param {number} total - order total
- * @returns {string} WhatsApp URL
+ * @param {number} total
+ * @returns {string} mailto URL
  */
-export const buildWhatsAppOrderURL = (items, total, phone = "2348012345678") => {
-  const itemLines = items
-    .map((i) => {
-      const price = i.product.discountPrice || i.product.price;
-      return `• ${i.product.name} x${i.quantity} = ${formatNaira(price * i.quantity)}`;
-    })
-    .join("%0A");
-
-  const message = encodeURIComponent(
-    `Hello Agrotech! 🌾\n\nI'd like to place an order:\n\n${items
+export const buildEmailOrderURL = (items, total) => {
+  const subject = encodeURIComponent("New Order — FarmSphere");
+  const body = encodeURIComponent(
+    `Hello FarmSphere Team,\n\nI would like to place the following order:\n\n${items
       .map((i) => {
         const price = i.product.discountPrice || i.product.price;
-        return `• ${i.product.name} x${i.quantity} = ${formatNaira(price * i.quantity)}`;
+        return `• ${i.product.name} x${i.quantity} = ${formatUSD(price * i.quantity)}`;
       })
-      .join("\n")}\n\n*Total: ${formatNaira(total)}*\n\nPlease confirm my order. Thank you!`
+      .join("\n")}\n\nOrder Total: ${formatUSD(total)}\n\nPlease confirm my order and provide payment details.\n\nThank you!`
   );
-
-  return `https://wa.me/${phone}?text=${message}`;
+  return `mailto:orders@farmsphere.africa?subject=${subject}&body=${body}`;
 };
 
 /**
- * Build WhatsApp single product order URL
+ * Build email inquiry link for a single product
  */
-export const buildWhatsAppProductURL = (product, phone = "2348012345678") => {
+export const buildEmailProductURL = (product) => {
   const price = product.discountPrice || product.price;
-  const message = encodeURIComponent(
-    `Hello Agrotech! 🌾\n\nI'm interested in ordering:\n\n*${product.name}*\nPrice: ${formatNaira(price)}\n\nPlease provide more details. Thank you!`
+  const subject = encodeURIComponent(`Product Inquiry — ${product.name}`);
+  const body = encodeURIComponent(
+    `Hello FarmSphere,\n\nI am interested in:\n\n*${product.name}*\nPrice: ${formatUSD(price)}\n\nPlease provide more details.\n\nThank you!`
   );
-  return `https://wa.me/${phone}?text=${message}`;
+  return `mailto:orders@farmsphere.africa?subject=${subject}&body=${body}`;
 };

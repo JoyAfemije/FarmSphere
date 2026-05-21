@@ -6,47 +6,47 @@ import "swiper/css/pagination";
 
 const testimonials = [
   {
-    name: "Alhaji Musa Ibrahim",
-    role: "Maize & Sorghum Farmer",
-    location: "Kano State",
+    name: "Kwame Asante",
+    role: "Maize & Cocoa Farmer",
+    location: "Ashanti Region, Ghana",
     avatar: "👨‍🌾",
-    text: "Agrotech's NPK fertilizer and insecticides transformed my farm output. My yield increased by 70% this season. I now order every 3 months. Delivery is always fast to Kano!",
+    text: "FarmSphere's NPK fertilizer and pesticides transformed my farm output. My yield increased by 70% this season. The email ordering process is seamless and delivery was right on schedule!",
     rating: 5,
     product: "NPK Fertilizer 20-10-10",
   },
   {
-    name: "Mrs. Chioma Okonkwo",
+    name: "Amina Diallo",
     role: "Vegetable Farmer",
-    location: "Anambra State",
+    location: "Dakar, Senegal",
     avatar: "👩‍🌾",
-    text: "The drip irrigation system I bought from Agrotech saved my tomato farm during the dry season. Customer support helped me install it via WhatsApp video call. Amazing service!",
+    text: "The drip irrigation system from FarmSphere saved my tomato farm during the dry season. Customer support responded by email within an hour and helped me install it step by step. Incredible!",
     rating: 5,
     product: "Drip Irrigation Kit",
   },
   {
-    name: "Emeka Adebisi",
+    name: "James Mwangi",
     role: "Agro-dealer & Distributor",
-    location: "Lagos State",
+    location: "Nairobi, Kenya",
     avatar: "🧑‍💼",
-    text: "I wholesale from Agrotech for my shop in Agege. The prices are very competitive and products are always original. My customers keep coming back. Best B2B agro supplier!",
+    text: "I wholesale from FarmSphere for my shop in Nairobi. The prices are very competitive and products are always genuine. My customers keep coming back. Best B2B agro supplier in Africa!",
     rating: 5,
     product: "Bulk Fertilizers & Chemicals",
   },
   {
-    name: "Fatima Al-Hassan",
+    name: "Fatuma Nakato",
     role: "Rice Farmer",
-    location: "Niger State",
+    location: "Kampala, Uganda",
     avatar: "👩",
-    text: "The power tiller I purchased works excellently on my 10-hectare rice farm. Agrotech gave me a 6-month warranty and technical support. Very professional company.",
+    text: "The power tiller I purchased works perfectly on my 10-hectare rice farm. FarmSphere provided a 6-month warranty and great technical support by email. Very professional company.",
     rating: 5,
     product: "Power Tiller Machine",
   },
   {
-    name: "Sunday Olawale",
+    name: "Sipho Dlamini",
     role: "Poultry & Crop Farmer",
-    location: "Ogun State",
+    location: "Durban, South Africa",
     avatar: "👨",
-    text: "I ordered herbicides and chicken feed supplements. Quality is top-notch and arrived within 48 hours to Sagamu. The WhatsApp ordering process is so convenient. 5 stars!",
+    text: "Ordered herbicides and livestock supplements. Quality is top-notch and arrived within 48 hours. The whole experience from browsing to delivery was smooth. 5 stars without hesitation!",
     rating: 5,
     product: "Herbicide & Livestock Supplements",
   },
@@ -94,7 +94,7 @@ export default function Testimonials() {
             transition={{ delay: 0.2 }}
             className="text-gray-400 max-w-xl mx-auto"
           >
-            Join 15,000+ satisfied farmers across Nigeria who trust Agrotech for their farming needs
+            Join 15,000+ satisfied farmers across Africa who trust FarmSphere for their farming needs
           </motion.p>
         </div>
 
@@ -159,7 +159,7 @@ export default function Testimonials() {
             { label: "Overall Rating", value: "4.9 / 5.0", icon: "⭐" },
             { label: "Happy Customers", value: "15,000+", icon: "👨‍🌾" },
             { label: "Orders Delivered", value: "50,000+", icon: "📦" },
-            { label: "States Covered", value: "All 36 + FCT", icon: "🗺️" },
+            { label: "Countries Covered", value: "20+ African", icon: "🌍" },
           ].map((s, i) => (
             <div key={i} className="text-center">
               <div className="text-3xl mb-1">{s.icon}</div>

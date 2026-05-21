@@ -89,12 +89,12 @@ function ProductFormModal({ product, categories, onClose, onSaved }) {
               <input {...register("brand")} className="input" placeholder="e.g. Notore, Syngenta" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Price (₦) *</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Price (USD $) *</label>
               <input {...register("price", { required: "Price is required", min: 0 })} type="number" className="input" placeholder="12500" />
               {errors.price && <p className="text-red-500 text-xs mt-1">{errors.price.message}</p>}
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Discount Price (₦)</label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Discount Price (USD $)</label>
               <input {...register("discountPrice", { min: 0 })} type="number" className="input" placeholder="Leave empty if no discount" />
             </div>
             <div>
@@ -199,7 +199,7 @@ export default function AdminProducts() {
 
   return (
     <>
-      <Helmet><title>Manage Products — Agrotech Admin</title></Helmet>
+      <Helmet><title>Manage Products — FarmSphere Admin</title></Helmet>
       <div>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div>

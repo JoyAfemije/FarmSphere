@@ -7,7 +7,7 @@ import useAuthStore from "./store/useAuthStore";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import CartSidebar from "./components/common/CartSidebar";
-import WhatsAppButton from "./components/common/WhatsAppButton";
+import LiveChatButton from "./components/common/LiveChatButton";
 import ScrollToTopButton, { RouteScrollToTop } from "./components/common/ScrollToTop";
 
 // Eagerly loaded pages
@@ -37,7 +37,7 @@ function PageLoader() {
       <div className="flex flex-col items-center gap-4">
         <div className="text-4xl animate-bounce">🌾</div>
         <div className="w-8 h-8 border-3 border-primary-200 border-t-primary-600 rounded-full animate-spin" />
-        <p className="text-sm text-gray-400 font-medium">Loading Agrotech...</p>
+        <p className="text-sm text-gray-400 font-medium">Loading FarmSphere...</p>
       </div>
     </div>
   );
@@ -59,7 +59,7 @@ function PublicLayout({ children }) {
       <main className="flex-1">{children}</main>
       <Footer />
       <CartSidebar />
-      <WhatsAppButton />
+      <LiveChatButton />
       <ScrollToTopButton />
     </div>
   );

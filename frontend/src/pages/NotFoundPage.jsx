@@ -6,7 +6,7 @@ import { FiHome, FiShoppingBag } from "react-icons/fi";
 export default function NotFoundPage() {
   return (
     <>
-      <Helmet><title>404 — Page Not Found | Agrotech Nigeria</title></Helmet>
+      <Helmet><title>404 — Page Not Found | FarmSphere Africa</title></Helmet>
       <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 p-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

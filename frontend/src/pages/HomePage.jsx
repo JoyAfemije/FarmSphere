@@ -10,10 +10,10 @@ import Newsletter from "../components/home/Newsletter";
 // Quick stat bar below hero
 function StatBar() {
   const stats = [
-    { icon: "🚚", text: "Free Delivery above ₦20,000" },
+    { icon: "🚚", text: "Free Delivery on Qualifying Orders" },
     { icon: "🔄", text: "7-Day Easy Returns" },
     { icon: "🔒", text: "Secure Payments" },
-    { icon: "💬", text: "WhatsApp Support 24/7" },
+    { icon: "📧", text: "Email Support · Fast Response" },
   ];
   return (
     <div className="bg-primary-600">
@@ -34,23 +34,23 @@ export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Agrotech — Nigeria's #1 Agricultural Technology Store | Buy Farming Tools Online</title>
-        <meta name="description" content="Shop premium farming tools, fertilizers, pesticides, irrigation systems and agricultural equipment at Agrotech Nigeria. Nationwide delivery. WhatsApp ordering available." />
-        <meta name="keywords" content="buy farming tools online Nigeria, fertilizers for sale Nigeria, pesticides Nigeria, irrigation systems Nigeria, agricultural chemicals Nigeria, Agrotech" />
-        <link rel="canonical" href="https://agrotech-store.vercel.app/" />
-        <meta property="og:title" content="Agrotech — Nigeria's #1 Agricultural Technology Store" />
-        <meta property="og:description" content="Shop 2,500+ genuine farming products. Nationwide delivery. WhatsApp ordering." />
+        <title>FarmSphere — Africa's #1 Agricultural Technology Store | Buy Farming Tools Online</title>
+        <meta name="description" content="Shop premium farming tools, fertilizers, pesticides, irrigation systems and agricultural equipment at FarmSphere. Serving 20+ African countries." />
+        <meta name="keywords" content="buy farming tools online Africa, fertilizers for sale Africa, pesticides Africa, irrigation systems Africa, agricultural chemicals Africa, FarmSphere" />
+        <link rel="canonical" href="https://farmsphere.africa/" />
+        <meta property="og:title" content="FarmSphere — Africa's #1 Agricultural Technology Store" />
+        <meta property="og:description" content="Shop 2,500+ genuine farming products. Pan-Africa delivery. Email ordering available." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "OnlineStore",
-          "name": "Agrotech Nigeria",
-          "description": "Nigeria's premier agricultural technology store",
-          "url": "https://agrotech-store.vercel.app",
+          "name": "FarmSphere Africa",
+          "description": "Africa's premier agricultural technology platform",
+          "url": "https://farmsphere.africa",
           "telephone": "+2348012345678",
           "address": {
             "@type": "PostalAddress",
             "addressCountry": "NG",
-            "addressLocality": "Kaduna"
+            "addressLocality": "Pan-African"
           }
         })}</script>
       </Helmet>

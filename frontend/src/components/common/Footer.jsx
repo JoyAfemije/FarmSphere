@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import { GiWheat } from "react-icons/gi";
-import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
-import { FaWhatsapp, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaWheatAwn, FaPhone, FaEnvelope, FaLocationDot, FaFacebook, FaInstagram, FaXTwitter, FaLinkedin } from "react-icons/fa6";
 
 const footerLinks = {
   shop: [
@@ -38,46 +36,46 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link to="/" className="inline-flex items-center gap-2 font-heading font-bold text-2xl text-white mb-4">
-              <GiWheat className="text-primary-400 text-3xl" />
-              Agrotech
+              <FaWheatAwn className="text-primary-400 text-3xl" />
+              FarmSphere
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed mb-6 max-w-xs">
-              Nigeria's premier agricultural technology store. We supply farmers, agro-dealers, and agricultural businesses with quality tools, chemicals, and equipment.
+              Africa's premier agricultural technology platform. We supply farmers, agro-dealers, and agricultural businesses across Africa with quality tools, chemicals, and equipment.
             </p>
 
             {/* Contact Info */}
             <div className="space-y-2.5 text-sm">
               <a href="tel:+2348012345678" className="flex items-center gap-2.5 text-gray-400 hover:text-primary-400 transition-colors">
-                <FiPhone size={14} className="text-primary-400 flex-shrink-0" />
+                <FaPhone size={13} className="text-white flex-shrink-0" />
                 +234 801 234 5678
               </a>
-              <a href="mailto:info@agrotech.ng" className="flex items-center gap-2.5 text-gray-400 hover:text-primary-400 transition-colors">
-                <FiMail size={14} className="text-primary-400 flex-shrink-0" />
-                info@agrotech.ng
+              <a href="mailto:info@farmsphere.africa" className="flex items-center gap-2.5 text-gray-400 hover:text-primary-400 transition-colors">
+                <FaEnvelope size={13} className="text-white flex-shrink-0" />
+                info@farmsphere.africa
               </a>
               <div className="flex items-start gap-2.5 text-gray-400">
-                <FiMapPin size={14} className="text-primary-400 flex-shrink-0 mt-0.5" />
-                <span>15 Agro Plaza, Abuja-Kano Road, Kaduna, Nigeria</span>
+                <FaLocationDot size={13} className="text-white flex-shrink-0 mt-0.5" />
+                <span>Pan-African Operations · Serving 20+ Countries</span>
               </div>
             </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-3 mt-6">
-              <a href="https://wa.me/2348012345678" target="_blank" rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-green-600 hover:bg-green-500 flex items-center justify-center transition-colors" aria-label="WhatsApp">
-                <FaWhatsapp size={17} className="text-white" />
-              </a>
               <a href="#" target="_blank" rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-blue-600 hover:bg-blue-500 flex items-center justify-center transition-colors" aria-label="Facebook">
+                className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center transition-colors" aria-label="Facebook">
                 <FaFacebook size={16} className="text-white" />
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-pink-600 hover:bg-pink-500 flex items-center justify-center transition-colors" aria-label="Instagram">
+                className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center transition-colors" aria-label="Instagram">
                 <FaInstagram size={16} className="text-white" />
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-sky-500 hover:bg-sky-400 flex items-center justify-center transition-colors" aria-label="Twitter">
-                <FaTwitter size={16} className="text-white" />
+                className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center transition-colors" aria-label="X / Twitter">
+                <FaXTwitter size={15} className="text-white" />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 flex items-center justify-center transition-colors" aria-label="LinkedIn">
+                <FaLinkedin size={16} className="text-white" />
               </a>
             </div>
           </div>
@@ -130,15 +128,13 @@ export default function Footer() {
       <div className="border-t border-gray-800">
         <div className="container py-5 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-xs text-gray-500 text-center md:text-left">
-            © {currentYear} Agrotech Nigeria. All rights reserved. Nigeria's Premier Agrotech Store.
+            © {currentYear} FarmSphere Africa. All rights reserved. Africa's Premier Agro-Tech Platform.
           </p>
           <div className="flex items-center gap-4">
             <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" className="h-5 opacity-50 grayscale" />
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png" alt="Mastercard" className="h-5 opacity-50 grayscale" />
-            <span className="text-xs text-gray-600 bg-gray-800 px-2 py-1 rounded">Bank Transfer</span>
-            <span className="text-xs text-green-500 bg-gray-800 px-2 py-1 rounded flex items-center gap-1">
-              <FaWhatsapp size={12} /> WhatsApp Pay
-            </span>
+            <span className="text-xs text-gray-400 bg-gray-800 px-2 py-1 rounded">Bank Transfer</span>
+            <span className="text-xs text-gray-400 bg-gray-800 px-2 py-1 rounded">Mobile Money</span>
           </div>
         </div>
       </div>

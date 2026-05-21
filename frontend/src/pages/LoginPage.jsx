@@ -4,8 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import { FiEye, FiEyeOff, FiMail, FiLock } from "react-icons/fi";
-import { GiWheat } from "react-icons/gi";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWheatAwn, FaEnvelope } from "react-icons/fa6";
 import useAuthStore from "../store/useAuthStore";
 
 export default function LoginPage() {
@@ -27,7 +26,7 @@ export default function LoginPage() {
   return (
     <>
       <Helmet>
-        <title>Login — Agrotech Nigeria</title>
+        <title>Login — FarmSphere Africa</title>
       </Helmet>
 
       <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 p-4">
@@ -41,10 +40,10 @@ export default function LoginPage() {
             {/* Logo */}
             <div className="text-center mb-8">
               <Link to="/" className="inline-flex items-center gap-2 font-heading font-bold text-2xl text-primary-600">
-                <GiWheat className="text-3xl" /> Agrotech
+                <FaWheatAwn className="text-3xl" /> FarmSphere
               </Link>
               <h1 className="text-2xl font-heading font-bold text-gray-900 dark:text-white mt-4">Welcome Back</h1>
-              <p className="text-gray-500 text-sm mt-1">Sign in to your Agrotech account</p>
+              <p className="text-gray-500 text-sm mt-1">Sign in to your FarmSphere account</p>
             </div>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -108,10 +107,10 @@ export default function LoginPage() {
               <Link to="/register" className="text-primary-600 font-semibold hover:underline">Create Account</Link>
             </div>
 
-            {/* WhatsApp alternative */}
-            <div className="mt-4 p-3 bg-green-50 dark:bg-green-950 rounded-xl flex items-center gap-2 text-sm text-green-700 dark:text-green-300">
-              <FaWhatsapp size={18} className="flex-shrink-0" />
-              <span>Or order directly via <a href="https://wa.me/2348012345678" target="_blank" rel="noopener noreferrer" className="font-semibold underline">WhatsApp</a> without an account</span>
+            {/* Email alternative */}
+            <div className="mt-4 p-3 bg-gray-50 dark:bg-gray-800 rounded-xl flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+              <FaEnvelope size={16} className="flex-shrink-0 text-gray-800 dark:text-white" />
+              <span>Or order directly via <a href="mailto:orders@farmsphere.africa" className="font-semibold underline text-primary-600">email</a> without an account</span>
             </div>
           </motion.div>
         </div>

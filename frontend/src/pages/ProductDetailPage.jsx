@@ -3,12 +3,12 @@ import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiShoppingCart, FiMinus, FiPlus, FiShare2, FiChevronRight, FiStar } from "react-icons/fi";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa6";
 import { productAPI } from "../api/products";
 import { reviewAPI } from "../api/reviews";
 import useCartStore from "../store/useCartStore";
 import useAuthStore from "../store/useAuthStore";
-import { formatNaira, buildWhatsAppProductURL } from "../utils/formatCurrency";
+import { formatNaira, buildEmailProductURL } from "../utils/formatCurrency";
 import ProductCard from "../components/products/ProductCard";
 import { ProductDetailSkeleton } from "../components/common/LoadingSkeleton";
 import toast from "react-hot-toast";
@@ -130,7 +130,7 @@ export default function ProductDetailPage() {
   return (
     <>
       <Helmet>
-        <title>{product.metaTitle || `${product.name} — Agrotech Nigeria`}</title>
+        <title>{product.metaTitle || `${product.name} — FarmSphere Africa`}</title>
         <meta name="description" content={product.metaDescription || product.shortDescription || product.description?.substring(0, 160)} />
         <meta property="og:title" content={product.name} />
         <meta property="og:description" content={product.shortDescription || product.description?.substring(0, 160)} />
@@ -142,7 +142,7 @@ export default function ProductDetailPage() {
           "image": product.images?.map(i => i.url),
           "description": product.description,
           "sku": product.sku,
-          "brand": { "@type": "Brand", "name": product.brand || "Agrotech" },
+          "brand": { "@type": "Brand", "name": product.brand || "FarmSphere" },
           "offers": {
             "@type": "Offer",
             "priceCurrency": "NGN",
@@ -300,12 +300,10 @@ export default function ProductDetailPage() {
                 <FiShoppingCart size={18} /> Add to Cart
               </button>
               <a
-                href={buildWhatsAppProductURL(product)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-green-500 hover:bg-green-600 text-white font-semibold text-base transition-colors"
+                href={buildEmailProductURL(product)}
+                className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-gray-900 hover:bg-gray-800 text-white font-semibold text-base transition-colors"
               >
-                <FaWhatsapp size={20} /> Order via WhatsApp
+                <FaEnvelope size={18} /> Enquire by Email
               </a>
             </div>
 

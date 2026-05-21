@@ -53,7 +53,7 @@ export default function Newsletter() {
             transition={{ delay: 0.2 }}
             className="text-primary-100 text-base md:text-lg mb-8"
           >
-            Join 10,000+ Nigerian farmers receiving weekly tips on soil health, crop management, and exclusive discount codes.
+            Join 10,000+ African farmers receiving weekly tips on soil health, crop management, and exclusive discount codes.
           </motion.p>
 
           {!submitted ? (

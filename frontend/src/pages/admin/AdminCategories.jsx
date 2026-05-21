@@ -103,7 +103,7 @@ export default function AdminCategories() {
 
   return (
     <>
-      <Helmet><title>Manage Categories — Agrotech Admin</title></Helmet>
+      <Helmet><title>Manage Categories — FarmSphere Admin</title></Helmet>
       <div>
         <div className="flex items-center justify-between mb-6">
           <div>

@@ -34,7 +34,7 @@ const useAuthStore = create(
           const { data } = await authAPI.register(userData);
           localStorage.setItem("agrotech_token", data.token);
           set({ user: data.user, token: data.token, isLoading: false });
-          toast.success(`Welcome to Agrotech, ${data.user.name}! 🌾`);
+          toast.success(`Welcome to FarmSphere, ${data.user.name}! 🌾`);
           return { success: true };
         } catch (error) {
           set({ isLoading: false });

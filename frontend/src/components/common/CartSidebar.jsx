@@ -1,9 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { FiX, FiTrash2, FiPlus, FiMinus, FiShoppingBag } from "react-icons/fi";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa6";
 import useCartStore from "../../store/useCartStore";
-import { formatNaira, buildWhatsAppOrderURL } from "../../utils/formatCurrency";
+import { formatNaira, buildEmailOrderURL } from "../../utils/formatCurrency";
 
 export default function CartSidebar() {
   const { items, isOpen, closeCart, removeItem, updateQuantity, subtotal, shippingFee, total } = useCartStore();
@@ -14,8 +14,8 @@ export default function CartSidebar() {
     navigate("/checkout");
   };
 
-  const handleWhatsAppOrder = () => {
-    const url = buildWhatsAppOrderURL(items, total());
+  const handleEmailOrder = () => {
+    const url = buildEmailOrderURL(items, total());
     window.open(url, "_blank");
   };
 
@@ -163,10 +163,10 @@ export default function CartSidebar() {
                 </button>
 
                 <button
-                  onClick={handleWhatsAppOrder}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-green-500 hover:bg-green-600 text-white font-semibold text-sm transition-colors"
+                  onClick={handleEmailOrder}
+                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-white font-semibold text-sm transition-colors"
                 >
-                  <FaWhatsapp size={18} /> Order via WhatsApp
+                  <FaEnvelope size={16} /> Email My Order
                 </button>
 
                 <p className="text-xs text-gray-400 text-center">

@@ -6,7 +6,7 @@ import {
   FiGrid, FiPackage, FiShoppingBag, FiUsers, FiTag,
   FiMenu, FiX, FiLogOut, FiHome
 } from "react-icons/fi";
-import { GiWheat } from "react-icons/gi";
+import { FaWheatAwn } from "react-icons/fa6";
 import useAuthStore from "../../store/useAuthStore";
 import DarkModeToggle from "../../components/common/DarkModeToggle";
 
@@ -26,7 +26,7 @@ function Sidebar({ onClose }) {
       {/* Logo */}
       <div className="flex items-center justify-between px-5 py-5 border-b border-gray-700">
         <div className="flex items-center gap-2 font-heading font-bold text-lg text-primary-400">
-          <GiWheat size={22} /> Agrotech <span className="badge bg-primary-800 text-primary-200 text-xs ml-1">Admin</span>
+          <FaWheatAwn size={22} /> FarmSphere <span className="badge bg-primary-800 text-primary-200 text-xs ml-1">Admin</span>
         </div>
         {onClose && (
           <button onClick={onClose} className="text-gray-400 hover:text-white lg:hidden"><FiX size={20} /></button>

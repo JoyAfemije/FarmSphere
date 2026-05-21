@@ -31,7 +31,7 @@ app.use(
   cors({
     origin: [
       process.env.FRONTEND_URL || "http://localhost:5173",
-      "https://agrotech-store.vercel.app",
+      "https://farmsphere.africa",
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
@@ -71,7 +71,7 @@ if (process.env.NODE_ENV === "development") {
 app.get("/", (req, res) => {
   res.json({
     success: true,
-    message: "🌾 Agrotech API is running!",
+    message: "🌾 FarmSphere API is running!",
     version: "1.0.0",
     environment: process.env.NODE_ENV,
     timestamp: new Date().toISOString(),

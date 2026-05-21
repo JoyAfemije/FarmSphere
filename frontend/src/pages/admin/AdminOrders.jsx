@@ -49,7 +49,7 @@ export default function AdminOrders() {
 
   return (
     <>
-      <Helmet><title>Manage Orders — Agrotech Admin</title></Helmet>
+      <Helmet><title>Manage Orders — FarmSphere Admin</title></Helmet>
       <div>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div>

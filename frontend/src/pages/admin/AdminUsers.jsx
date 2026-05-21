@@ -45,7 +45,7 @@ export default function AdminUsers() {
 
   return (
     <>
-      <Helmet><title>Manage Users — Agrotech Admin</title></Helmet>
+      <Helmet><title>Manage Users — FarmSphere Admin</title></Helmet>
       <div>
         <div className="mb-6">
           <h1 className="text-2xl font-heading font-bold text-gray-900 dark:text-white">Users</h1>

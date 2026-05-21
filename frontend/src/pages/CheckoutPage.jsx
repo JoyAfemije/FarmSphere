@@ -4,18 +4,17 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import { FiShoppingBag, FiArrowLeft } from "react-icons/fi";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa6";
 import useCartStore from "../store/useCartStore";
 import useAuthStore from "../store/useAuthStore";
 import { orderAPI } from "../api/orders";
-import { formatNaira, buildWhatsAppOrderURL } from "../utils/formatCurrency";
+import { formatNaira, buildEmailOrderURL } from "../utils/formatCurrency";
 import toast from "react-hot-toast";
 
-const NIGERIA_STATES = [
-  "Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno",
-  "Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","FCT","Gombe","Imo",
-  "Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos","Nasarawa",
-  "Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara"
+const AFRICAN_COUNTRIES = [
+  "Nigeria","Kenya","Ghana","South Africa","Ethiopia","Tanzania","Uganda",
+  "Rwanda","Senegal","Côte d'Ivoire","Cameroon","Zimbabwe","Zambia","Mozambique",
+  "Angola","Egypt","Morocco","Tunisia","Algeria","Sudan","Other"
 ];
 
 export default function CheckoutPage() {
@@ -23,7 +22,7 @@ export default function CheckoutPage() {
   const { user } = useAuthStore();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState("whatsapp");
+  const [paymentMethod, setPaymentMethod] = useState("email");
   const [orderSuccess, setOrderSuccess] = useState(null);
 
   const { register, handleSubmit, watch, formState: { errors } } = useForm({
@@ -51,12 +50,12 @@ export default function CheckoutPage() {
   const onSubmit = async (formData) => {
     setLoading(true);
     try {
-      if (paymentMethod === "whatsapp") {
-        // WhatsApp ordering
-        const url = buildWhatsAppOrderURL(items, total(), "2348012345678");
+      if (paymentMethod === "email") {
+        // Email ordering
+        const url = buildEmailOrderURL(items, total());
         clearCart();
         window.open(url, "_blank");
-        toast.success("Order sent to WhatsApp! 🎉");
+        toast.success("Order email opened! 🎉");
         navigate("/");
         return;
       }
@@ -101,7 +100,7 @@ export default function CheckoutPage() {
           <h1 className="text-3xl font-heading font-bold text-gray-900 dark:text-white mb-2">Order Placed!</h1>
           <p className="text-gray-500 mb-4">Order Number: <span className="font-bold text-primary-600">{orderSuccess.orderNumber}</span></p>
           <p className="text-gray-500 mb-8">
-            Thank you for your order! Our team will contact you via WhatsApp to confirm delivery details.
+            Thank you for your order! Our team will contact you via email to confirm delivery details.
             A confirmation email has been sent to <strong>{orderSuccess.shippingAddress.email}</strong>.
           </p>
           <div className="flex gap-3 justify-center">
@@ -116,7 +115,7 @@ export default function CheckoutPage() {
   return (
     <>
       <Helmet>
-        <title>Checkout — Agrotech Nigeria</title>
+        <title>Checkout — FarmSphere Africa</title>
       </Helmet>
 
       <div className="container py-10">
@@ -162,9 +161,9 @@ export default function CheckoutPage() {
                     {errors.city && <p className="text-red-500 text-xs mt-1">{errors.city.message}</p>}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">State *</label>
-                    <select {...register("state", { required: "State is required" })} className="input">
-                      {NIGERIA_STATES.map((s) => <option key={s} value={s}>{s}</option>)}
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Country *</label>
+                    <select {...register("state", { required: "Country is required" })} className="input">
+                      {AFRICAN_COUNTRIES.map((s) => <option key={s} value={s}>{s}</option>)}
                     </select>
                   </div>
                   <div className="md:col-span-2">
@@ -181,7 +180,7 @@ export default function CheckoutPage() {
                 </h2>
                 <div className="space-y-3">
                   {[
-                    { id: "whatsapp", label: "Order via WhatsApp", desc: "Send order details via WhatsApp. Pay on confirmation.", icon: <FaWhatsapp className="text-green-500" size={20} /> },
+                    { id: "email", label: "Order via Email", desc: "Send order details by email. Our team confirms within 2 hours.", icon: <FaEnvelope className="text-gray-800 dark:text-white" size={18} /> },
                     { id: "transfer", label: "Bank Transfer", desc: "Transfer to our account after order is confirmed.", icon: "🏦" },
                     { id: "cash", label: "Cash on Delivery", desc: "Pay when your order arrives. Available in select cities.", icon: "💵" },
                   ].map((method) => (
@@ -206,8 +205,8 @@ export default function CheckoutPage() {
                     <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                     Processing...
                   </span>
-                ) : paymentMethod === "whatsapp" ? (
-                  <><FaWhatsapp size={20} /> Send Order to WhatsApp</>
+                ) : paymentMethod === "email" ? (
+                  <><FaEnvelope size={18} /> Send Order by Email</>
                 ) : (
                   <><FiShoppingBag size={20} /> Place Order — {formatNaira(total())}</>
                 )}
@@ -250,7 +249,7 @@ export default function CheckoutPage() {
               </div>
 
               <div className="mt-4 p-3 bg-green-50 dark:bg-green-950 rounded-xl text-xs text-green-700 dark:text-green-300">
-                🔒 Your order is protected by Agrotech's buyer guarantee.
+                🔒 Your order is protected by FarmSphere's buyer guarantee.
               </div>
             </div>
           </div>

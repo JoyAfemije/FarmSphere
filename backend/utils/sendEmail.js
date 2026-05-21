@@ -31,8 +31,8 @@ const sendOrderConfirmation = async (order, email) => {
       <tr>
         <td style="padding:8px;border-bottom:1px solid #eee">${item.name}</td>
         <td style="padding:8px;border-bottom:1px solid #eee;text-align:center">${item.quantity}</td>
-        <td style="padding:8px;border-bottom:1px solid #eee;text-align:right">₦${item.price.toLocaleString()}</td>
-        <td style="padding:8px;border-bottom:1px solid #eee;text-align:right">₦${(item.price * item.quantity).toLocaleString()}</td>
+        <td style="padding:8px;border-bottom:1px solid #eee;text-align:right">$${item.price.toLocaleString()}</td>
+        <td style="padding:8px;border-bottom:1px solid #eee;text-align:right">$${(item.price * item.quantity).toLocaleString()}</td>
       </tr>`
     )
     .join("");
@@ -40,7 +40,7 @@ const sendOrderConfirmation = async (order, email) => {
   const html = `
     <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#333">
       <div style="background:#16a34a;color:#fff;padding:24px;text-align:center;border-radius:8px 8px 0 0">
-        <h1 style="margin:0;font-size:24px">🌾 Agrotech</h1>
+        <h1 style="margin:0;font-size:24px">🌾 FarmSphere</h1>
         <p style="margin:8px 0 0;opacity:0.9">Order Confirmation</p>
       </div>
       <div style="padding:24px;background:#fff;border:1px solid #e5e7eb">
@@ -62,9 +62,9 @@ const sendOrderConfirmation = async (order, email) => {
         </table>
 
         <div style="text-align:right;margin-top:16px">
-          <p>Subtotal: <strong>₦${order.subtotal.toLocaleString()}</strong></p>
-          <p>Shipping: <strong>₦${order.shippingFee.toLocaleString()}</strong></p>
-          <p style="font-size:18px;color:#16a34a">Total: <strong>₦${order.total.toLocaleString()}</strong></p>
+          <p>Subtotal: <strong>$${order.subtotal.toLocaleString()}</strong></p>
+          <p>Shipping: <strong>$${order.shippingFee.toLocaleString()}</strong></p>
+          <p style="font-size:18px;color:#16a34a">Total: <strong>$${order.total.toLocaleString()}</strong></p>
         </div>
 
         <div style="margin-top:24px;padding:16px;background:#f9fafb;border-radius:8px">
@@ -73,15 +73,15 @@ const sendOrderConfirmation = async (order, email) => {
           <p>Phone: ${order.shippingAddress.phone}</p>
         </div>
 
-        <p style="margin-top:24px">Our team will contact you on WhatsApp to confirm your order. You can also track your order status on our website.</p>
+        <p style="margin-top:24px">Our team will contact you by email to confirm your order. You can also track your order status on our website.</p>
       </div>
       <div style="background:#f3f4f6;padding:16px;text-align:center;border-radius:0 0 8px 8px;font-size:12px;color:#6b7280">
-        <p>© ${new Date().getFullYear()} Agrotech. All rights reserved.</p>
-        <p>Nigeria's Premier Agricultural Technology Store</p>
+        <p>© ${new Date().getFullYear()} FarmSphere Africa. All rights reserved.</p>
+        <p>Africa's Premier Agricultural Technology Platform</p>
       </div>
     </div>`;
 
-  return sendEmail({ to: email, subject: `Order Confirmed - ${order.orderNumber} | Agrotech`, html });
+  return sendEmail({ to: email, subject: `Order Confirmed - ${order.orderNumber} | FarmSphere`, html });
 };
 
 /**

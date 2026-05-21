@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import { FiEye, FiEyeOff, FiMail, FiLock, FiUser, FiPhone } from "react-icons/fi";
-import { GiWheat } from "react-icons/gi";
+import { FaWheatAwn } from "react-icons/fa6";
 import useAuthStore from "../store/useAuthStore";
 
 export default function RegisterPage() {
@@ -23,7 +23,7 @@ export default function RegisterPage() {
   return (
     <>
       <Helmet>
-        <title>Create Account — Agrotech Nigeria</title>
+        <title>Create Account — FarmSphere Africa</title>
       </Helmet>
 
       <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 p-4">
@@ -36,10 +36,10 @@ export default function RegisterPage() {
           >
             <div className="text-center mb-8">
               <Link to="/" className="inline-flex items-center gap-2 font-heading font-bold text-2xl text-primary-600">
-                <GiWheat className="text-3xl" /> Agrotech
+                <FaWheatAwn className="text-3xl" /> FarmSphere
               </Link>
               <h1 className="text-2xl font-heading font-bold text-gray-900 dark:text-white mt-4">Create Account</h1>
-              <p className="text-gray-500 text-sm mt-1">Join 15,000+ Nigerian farmers on Agrotech</p>
+              <p className="text-gray-500 text-sm mt-1">Join 15,000+ African farmers on FarmSphere</p>
             </div>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

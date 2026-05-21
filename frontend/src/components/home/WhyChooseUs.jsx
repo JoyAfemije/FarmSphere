@@ -6,37 +6,37 @@ const features = [
     icon: <FiCheckCircle size={26} />,
     title: "100% Genuine Products",
     desc: "Every product is sourced directly from certified manufacturers and distributors. We guarantee authenticity on every purchase.",
-    color: "bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400",
+    color: "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white",
   },
   {
     icon: <FiTruck size={26} />,
-    title: "Nationwide Delivery",
-    desc: "We deliver to all 36 states in Nigeria. Free shipping on orders above ₦20,000. Express delivery available in major cities.",
-    color: "bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400",
+    title: "Pan-Africa Delivery",
+    desc: "We deliver to 20+ African countries. Free shipping on qualifying orders. Express delivery available in major cities.",
+    color: "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white",
   },
   {
     icon: <FiShield size={26} />,
     title: "Secure Payments",
-    desc: "Multiple secure payment options including bank transfer, WhatsApp Pay, and cash on delivery for your convenience.",
-    color: "bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400",
+    desc: "Multiple secure payment options including bank transfer, mobile money, and cash on delivery across Africa.",
+    color: "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white",
   },
   {
     icon: <FiHeadphones size={26} />,
     title: "Expert Agricultural Support",
-    desc: "Our team of agronomists and farming experts are available via WhatsApp to help you choose the right products.",
-    color: "bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400",
+    desc: "Our team of agronomists and farming experts are available by email and live chat to help you choose the right products.",
+    color: "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white",
   },
   {
     icon: <FiStar size={26} />,
     title: "Best Price Guarantee",
-    desc: "We price-match any legitimate Nigerian agro-supplier. Get the best value for your farming investment with us.",
-    color: "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400",
+    desc: "We price-match any legitimate African agro-supplier. Get the best value for your farming investment with us.",
+    color: "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white",
   },
   {
     icon: <FiRefreshCw size={26} />,
     title: "Easy Returns",
     desc: "Not satisfied? Return within 7 days. Defective products are replaced immediately — no questions asked.",
-    color: "bg-rose-100 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400",
+    color: "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white",
   },
 ];
 
@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80&auto=format&fit=crop"
-                alt="Modern farming with Agrotech products"
+                alt="Modern farming with FarmSphere products"
                 className="w-full h-[480px] object-cover"
                 loading="lazy"
               />
@@ -76,7 +76,7 @@ export default function WhyChooseUs() {
                   <p className="font-semibold text-sm">Chukwuemeka O.</p>
                 </div>
               </div>
-              <p className="text-xs text-gray-500 leading-relaxed">"My crop yield doubled after using Agrotech's NPK fertilizer combo. Excellent quality!"</p>
+              <p className="text-xs text-gray-500 leading-relaxed">"My crop yield doubled after using FarmSphere's NPK fertilizer combo. Excellent quality!"</p>
               <div className="flex mt-2">
                 {"⭐".repeat(5)}
               </div>
@@ -106,7 +106,7 @@ export default function WhyChooseUs() {
               transition={{ delay: 0.1 }}
               className="section-title mb-4"
             >
-              The Smart Choice for Nigerian Farmers
+              The Smart Choice for African Farmers
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 15 }}
@@ -115,7 +115,7 @@ export default function WhyChooseUs() {
               transition={{ delay: 0.2 }}
               className="text-gray-500 dark:text-gray-400 mb-8"
             >
-              For over 10 years, we've been empowering Nigerian farmers with quality agricultural inputs and cutting-edge farming technology.
+              For over 10 years, we've been empowering African farmers with quality agricultural inputs and cutting-edge farming technology.
             </motion.p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">

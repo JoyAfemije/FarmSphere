@@ -54,16 +54,16 @@ export default function ProductsPage() {
   };
 
   const pageTitle = search
-    ? `Search: "${search}" — Agrotech`
+    ? `Search: "${search}" — FarmSphere`
     : category
-    ? `${category.replace(/-/g, " ")} Products — Agrotech`
-    : "All Agricultural Products — Agrotech Nigeria";
+    ? `${category.replace(/-/g, " ")} Products — FarmSphere`
+    : "All Agricultural Products — FarmSphere Africa";
 
   return (
     <>
       <Helmet>
         <title>{pageTitle}</title>
-        <meta name="description" content="Browse and buy premium agricultural tools, fertilizers, pesticides, irrigation systems and farming equipment from Agrotech Nigeria. Nationwide delivery available." />
+        <meta name="description" content="Browse and buy premium agricultural tools, fertilizers, pesticides, irrigation systems and farming equipment from FarmSphere Nigeria. Pan-Africa delivery available." />
       </Helmet>
 
       <div className="min-h-screen">
